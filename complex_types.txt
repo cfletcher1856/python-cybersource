@@ -1,0 +1,1127 @@
+(RequestMessage){
+   merchantID = None
+   merchantReferenceCode = None
+   debtIndicator = None
+   clientLibrary = None
+   clientLibraryVersion = None
+   clientEnvironment = None
+   clientSecurityLibraryVersion = None
+   clientApplication = None
+   clientApplicationVersion = None
+   clientApplicationUser = None
+   routingCode = None
+   comments = None
+   returnURL = None
+   invoiceHeader =
+      (InvoiceHeader){
+         merchantDescriptor = None
+         merchantDescriptorContact = None
+         merchantDescriptorAlternate = None
+         merchantDescriptorStreet = None
+         merchantDescriptorCity = None
+         merchantDescriptorState = None
+         merchantDescriptorPostalCode = None
+         merchantDescriptorCountry = None
+         isGift = None
+         returnsAccepted = None
+         tenderType = None
+         merchantVATRegistrationNumber = None
+         purchaserOrderDate = None
+         purchaserVATRegistrationNumber = None
+         vatInvoiceReferenceNumber = None
+         summaryCommodityCode = None
+         supplierOrderReference = None
+         userPO = None
+         costCenter = None
+         purchaserCode = None
+         taxable = None
+         amexDataTAA1 = None
+         amexDataTAA2 = None
+         amexDataTAA3 = None
+         amexDataTAA4 = None
+         invoiceDate = None
+      }
+   billTo =
+      (BillTo){
+         title = None
+         firstName = None
+         middleName = None
+         lastName = None
+         suffix = None
+         buildingNumber = None
+         street1 = None
+         street2 = None
+         street3 = None
+         street4 = None
+         city = None
+         county = None
+         state = None
+         postalCode = None
+         country = None
+         company = None
+         companyTaxID = None
+         phoneNumber = None
+         email = None
+         ipAddress = None
+         customerPassword = None
+         ipNetworkAddress = None
+         hostname = None
+         domainName = None
+         dateOfBirth = None
+         driversLicenseNumber = None
+         driversLicenseState = None
+         ssn = None
+         customerID = None
+         httpBrowserType = None
+         httpBrowserEmail = None
+         httpBrowserCookiesAccepted = None
+         nif = None
+         personalID = None
+         language = None
+         name = None
+      }
+   shipTo =
+      (ShipTo){
+         title = None
+         firstName = None
+         middleName = None
+         lastName = None
+         suffix = None
+         street1 = None
+         street2 = None
+         street3 = None
+         street4 = None
+         city = None
+         county = None
+         state = None
+         postalCode = None
+         country = None
+         company = None
+         phoneNumber = None
+         email = None
+         shippingMethod = None
+         name = None
+      }
+   shipFrom =
+      (ShipFrom){
+         title = None
+         firstName = None
+         middleName = None
+         lastName = None
+         suffix = None
+         street1 = None
+         street2 = None
+         street3 = None
+         street4 = None
+         city = None
+         county = None
+         state = None
+         postalCode = None
+         country = None
+         company = None
+         phoneNumber = None
+         email = None
+      }
+   item[] = <empty>
+   purchaseTotals =
+      (PurchaseTotals){
+         currency = None
+         discountAmount = None
+         taxAmount = None
+         dutyAmount = None
+         grandTotalAmount = None
+         freightAmount = None
+         foreignAmount = None
+         foreignCurrency = None
+         exchangeRate = None
+         exchangeRateTimeStamp = None
+         additionalAmountType0 = None
+         additionalAmount0 = None
+         additionalAmountType1 = None
+         additionalAmount1 = None
+         additionalAmountType2 = None
+         additionalAmount2 = None
+         additionalAmountType3 = None
+         additionalAmount3 = None
+         additionalAmountType4 = None
+         additionalAmount4 = None
+         serviceFeeAmount = None
+      }
+   fundingTotals =
+      (FundingTotals){
+         currency = None
+         grandTotalAmount = None
+      }
+   dcc =
+      (DCC){
+         dccIndicator = None
+      }
+   pos =
+      (Pos){
+         entryMode = None
+         cardPresent = None
+         terminalCapability = None
+         trackData = None
+         terminalID = None
+         terminalType = None
+         terminalLocation = None
+         transactionSecurity = None
+         catLevel = None
+         conditionCode = None
+         environment = None
+      }
+   installment =
+      (Installment){
+         sequence = None
+         totalCount = None
+         totalAmount = None
+         frequency = None
+         amount = None
+      }
+   card =
+      (Card){
+         fullName = None
+         accountNumber = None
+         expirationMonth = None
+         expirationYear = None
+         cvIndicator = None
+         cvNumber = None
+         cardType = None
+         issueNumber = None
+         startMonth = None
+         startYear = None
+         pin = None
+         accountEncoderID = None
+         bin = None
+      }
+   check =
+      (Check){
+         fullName = None
+         accountNumber = None
+         accountType = None
+         bankTransitNumber = None
+         checkNumber = None
+         secCode = None
+         accountEncoderID = None
+         authenticateID = None
+         paymentInfo = None
+      }
+   bml =
+      (BML){
+         customerBillingAddressChange = None
+         customerEmailChange = None
+         customerHasCheckingAccount = None
+         customerHasSavingsAccount = None
+         customerPasswordChange = None
+         customerPhoneChange = None
+         customerRegistrationDate = None
+         customerTypeFlag = None
+         grossHouseholdIncome = None
+         householdIncomeCurrency = None
+         itemCategory = None
+         merchantPromotionCode = None
+         preapprovalNumber = None
+         productDeliveryTypeIndicator = None
+         residenceStatus = None
+         tcVersion = None
+         yearsAtCurrentResidence = None
+         yearsWithCurrentEmployer = None
+         employerStreet1 = None
+         employerStreet2 = None
+         employerCity = None
+         employerCompanyName = None
+         employerCountry = None
+         employerPhoneNumber = None
+         employerPhoneType = None
+         employerState = None
+         employerPostalCode = None
+         shipToPhoneType = None
+         billToPhoneType = None
+         methodOfPayment = None
+         productType = None
+         customerAuthenticatedByMerchant = None
+         backOfficeIndicator = None
+         shipToEqualsBillToNameIndicator = None
+         shipToEqualsBillToAddressIndicator = None
+         alternateIPAddress = None
+         businessLegalName = None
+         dbaName = None
+         businessAddress1 = None
+         businessAddress2 = None
+         businessCity = None
+         businessState = None
+         businessPostalCode = None
+         businessCountry = None
+         businessMainPhone = None
+         userID = None
+         pin = None
+         adminLastName = None
+         adminFirstName = None
+         adminPhone = None
+         adminFax = None
+         adminEmailAddress = None
+         adminTitle = None
+         supervisorLastName = None
+         supervisorFirstName = None
+         supervisorEmailAddress = None
+         businessDAndBNumber = None
+         businessTaxID = None
+         businessNAICSCode = None
+         businessType = None
+         businessYearsInBusiness = None
+         businessNumberOfEmployees = None
+         businessPONumber = None
+         businessLoanType = None
+         businessApplicationID = None
+         businessProductCode = None
+         pgLastName = None
+         pgFirstName = None
+         pgSSN = None
+         pgDateOfBirth = None
+         pgAnnualIncome = None
+         pgIncomeCurrencyType = None
+         pgResidenceStatus = None
+         pgCheckingAccountIndicator = None
+         pgSavingsAccountIndicator = None
+         pgYearsAtEmployer = None
+         pgYearsAtResidence = None
+         pgHomeAddress1 = None
+         pgHomeAddress2 = None
+         pgHomeCity = None
+         pgHomeState = None
+         pgHomePostalCode = None
+         pgHomeCountry = None
+         pgEmailAddress = None
+         pgHomePhone = None
+         pgTitle = None
+      }
+   gecc =
+      (GECC){
+         saleType = None
+         planNumber = None
+         sequenceNumber = None
+         promotionEndDate = None
+         promotionPlan = None
+         line[] = <empty>
+      }
+   ucaf =
+      (UCAF){
+         authenticationData = None
+         collectionIndicator = None
+      }
+   fundTransfer =
+      (FundTransfer){
+         accountNumber = None
+         accountName = None
+         bankCheckDigit = None
+         iban = None
+      }
+   bankInfo =
+      (BankInfo){
+         bankCode = None
+         name = None
+         address = None
+         city = None
+         country = None
+         branchCode = None
+         swiftCode = None
+         sortCode = None
+         issuerID = None
+      }
+   subscription =
+      (Subscription){
+         title = None
+         paymentMethod = None
+      }
+   recurringSubscriptionInfo =
+      (RecurringSubscriptionInfo){
+         subscriptionID = None
+         status = None
+         amount = None
+         numberOfPayments = None
+         numberOfPaymentsToAdd = None
+         automaticRenew = None
+         frequency = None
+         startDate = None
+         endDate = None
+         approvalRequired = None
+         event =
+            (PaySubscriptionEvent){
+               amount = None
+               approvedBy = None
+               number = None
+            }
+         billPayment = None
+      }
+   decisionManager =
+      (DecisionManager){
+         enabled = None
+         profile = None
+         travelData =
+            (DecisionManagerTravelData){
+               leg[] = <empty>
+               departureDateTime = None
+               completeRoute = None
+               journeyType = None
+            }
+      }
+   otherTax =
+      (OtherTax){
+         vatTaxAmount = None
+         vatTaxRate = None
+         alternateTaxAmount = None
+         alternateTaxIndicator = None
+         alternateTaxID = None
+         localTaxAmount = None
+         localTaxIndicator = None
+         nationalTaxAmount = None
+         nationalTaxIndicator = None
+      }
+   paypal = <empty>
+   merchantDefinedData =
+      (MerchantDefinedData){
+         field1 = None
+         field2 = None
+         field3 = None
+         field4 = None
+         field5 = None
+         field6 = None
+         field7 = None
+         field8 = None
+         field9 = None
+         field10 = None
+         field11 = None
+         field12 = None
+         field13 = None
+         field14 = None
+         field15 = None
+         field16 = None
+         field17 = None
+         field18 = None
+         field19 = None
+         field20 = None
+         mddField[] = <empty>
+      }
+   merchantSecureData =
+      (MerchantSecureData){
+         field1 = None
+         field2 = None
+         field3 = None
+         field4 = None
+      }
+   jpo =
+      (JPO){
+         paymentMethod = None
+         bonusAmount = None
+         bonuses = None
+         installments = None
+      }
+   orderRequestToken = None
+   linkToRequest = None
+   serviceFee =
+      (ServiceFee){
+         merchantDescriptor = None
+         merchantDescriptorContact = None
+         merchantDescriptorState = None
+      }
+   ccAuthService =
+      (CCAuthService){
+         cavv = None
+         cavvAlgorithm = None
+         commerceIndicator = None
+         eciRaw = None
+         xid = None
+         reconciliationID = None
+         avsLevel = None
+         fxQuoteID = None
+         returnAuthRecord = None
+         authType = None
+         verbalAuthCode = None
+         billPayment = None
+         authenticationXID = None
+         authorizationXID = None
+         industryDatatype = None
+         traceNumber = None
+         checksumKey = None
+         aggregatorID = None
+         aggregatorName = None
+         splitTenderIndicator = None
+         veresEnrolled = None
+         paresStatus = None
+         partialAuthIndicator = None
+         captureDate = None
+         _run = ""
+      }
+   ccCaptureService =
+      (CCCaptureService){
+         authType = None
+         verbalAuthCode = None
+         authRequestID = None
+         reconciliationID = None
+         partialPaymentID = None
+         purchasingLevel = None
+         industryDatatype = None
+         authRequestToken = None
+         merchantReceiptNumber = None
+         posData = None
+         transactionID = None
+         checksumKey = None
+         gratuityAmount = None
+         _run = ""
+      }
+   ccCreditService =
+      (CCCreditService){
+         captureRequestID = None
+         reconciliationID = None
+         partialPaymentID = None
+         purchasingLevel = None
+         industryDatatype = None
+         commerceIndicator = None
+         billPayment = None
+         authorizationXID = None
+         occurrenceNumber = None
+         authCode = None
+         captureRequestToken = None
+         merchantReceiptNumber = None
+         checksumKey = None
+         aggregatorID = None
+         aggregatorName = None
+         _run = ""
+      }
+   ccAuthReversalService =
+      (CCAuthReversalService){
+         authRequestID = None
+         authRequestToken = None
+         reversalReason = None
+         _run = ""
+      }
+   ccAutoAuthReversalService =
+      (CCAutoAuthReversalService){
+         authPaymentServiceData = None
+         reconciliationID = None
+         authAmount = None
+         commerceIndicator = None
+         authRequestID = None
+         billAmount = None
+         authCode = None
+         authType = None
+         billPayment = None
+         dateAdded = None
+         _run = ""
+      }
+   ccDCCService =
+      (CCDCCService){
+         _run = ""
+      }
+   serviceFeeCalculateService =
+      (ServiceFeeCalculateService){
+         _run = ""
+      }
+   ecDebitService =
+      (ECDebitService){
+         paymentMode = None
+         referenceNumber = None
+         settlementMethod = None
+         transactionToken = None
+         verificationLevel = None
+         partialPaymentID = None
+         commerceIndicator = None
+         debitRequestID = None
+         _run = ""
+      }
+   ecCreditService =
+      (ECCreditService){
+         referenceNumber = None
+         settlementMethod = None
+         transactionToken = None
+         debitRequestID = None
+         partialPaymentID = None
+         commerceIndicator = None
+         debitRequestToken = None
+         _run = ""
+      }
+   ecAuthenticateService =
+      (ECAuthenticateService){
+         referenceNumber = None
+         _run = ""
+      }
+   payerAuthEnrollService =
+      (PayerAuthEnrollService){
+         httpAccept = None
+         httpUserAgent = None
+         merchantName = None
+         merchantURL = None
+         purchaseDescription = None
+         purchaseTime = None
+         countryCode = None
+         acquirerBin = None
+         loginID = None
+         password = None
+         merchantID = None
+         _run = ""
+      }
+   payerAuthValidateService =
+      (PayerAuthValidateService){
+         signedPARes = None
+         _run = ""
+      }
+   taxService =
+      (TaxService){
+         nexus = None
+         noNexus = None
+         orderAcceptanceCity = None
+         orderAcceptanceCounty = None
+         orderAcceptanceCountry = None
+         orderAcceptanceState = None
+         orderAcceptancePostalCode = None
+         orderOriginCity = None
+         orderOriginCounty = None
+         orderOriginCountry = None
+         orderOriginState = None
+         orderOriginPostalCode = None
+         sellerRegistration = None
+         sellerRegistration0 = None
+         sellerRegistration1 = None
+         sellerRegistration2 = None
+         sellerRegistration3 = None
+         sellerRegistration4 = None
+         sellerRegistration5 = None
+         sellerRegistration6 = None
+         sellerRegistration7 = None
+         sellerRegistration8 = None
+         sellerRegistration9 = None
+         buyerRegistration = None
+         middlemanRegistration = None
+         pointOfTitleTransfer = None
+         _run = ""
+      }
+   afsService =
+      (AFSService){
+         avsCode = None
+         cvCode = None
+         disableAVSScoring = None
+         customRiskModel = None
+         _run = ""
+      }
+   davService =
+      (DAVService){
+         _run = ""
+      }
+   exportService =
+      (ExportService){
+         addressOperator = None
+         addressWeight = None
+         companyWeight = None
+         nameWeight = None
+         _run = ""
+      }
+   fxRatesService =
+      (FXRatesService){
+         _run = ""
+      }
+   bankTransferService =
+      (BankTransferService){
+         _run = ""
+      }
+   bankTransferRefundService =
+      (BankTransferRefundService){
+         bankTransferRequestID = None
+         bankTransferRealTimeRequestID = None
+         reconciliationID = None
+         bankTransferRealTimeReconciliationID = None
+         bankTransferRequestToken = None
+         bankTransferRealTimeRequestToken = None
+         _run = ""
+      }
+   bankTransferRealTimeService =
+      (BankTransferRealTimeService){
+         bankTransferRealTimeType = None
+         _run = ""
+      }
+   directDebitMandateService =
+      (DirectDebitMandateService){
+         mandateDescriptor = None
+         firstDebitDate = None
+         _run = ""
+      }
+   directDebitService =
+      (DirectDebitService){
+         dateCollect = None
+         directDebitText = None
+         authorizationID = None
+         transactionType = None
+         directDebitType = None
+         validateRequestID = None
+         recurringType = None
+         mandateID = None
+         validateRequestToken = None
+         reconciliationID = None
+         mandateAuthenticationDate = None
+         _run = ""
+      }
+   directDebitRefundService =
+      (DirectDebitRefundService){
+         directDebitRequestID = None
+         reconciliationID = None
+         directDebitRequestToken = None
+         _run = ""
+      }
+   directDebitValidateService =
+      (DirectDebitValidateService){
+         directDebitValidateText = None
+         _run = ""
+      }
+   paySubscriptionCreateService =
+      (PaySubscriptionCreateService){
+         paymentRequestID = None
+         paymentRequestToken = None
+         disableAutoAuth = None
+         _run = ""
+      }
+   paySubscriptionUpdateService =
+      (PaySubscriptionUpdateService){
+         _run = ""
+      }
+   paySubscriptionEventUpdateService =
+      (PaySubscriptionEventUpdateService){
+         action = None
+         _run = ""
+      }
+   paySubscriptionRetrieveService =
+      (PaySubscriptionRetrieveService){
+         _run = ""
+      }
+   paySubscriptionDeleteService =
+      (PaySubscriptionDeleteService){
+         _run = ""
+      }
+   payPalPaymentService =
+      (PayPalPaymentService){
+         cancelURL = None
+         successURL = None
+         reconciliationID = None
+         _run = ""
+      }
+   payPalCreditService =
+      (PayPalCreditService){
+         payPalPaymentRequestID = None
+         reconciliationID = None
+         payPalPaymentRequestToken = None
+         _run = ""
+      }
+   voidService =
+      (VoidService){
+         voidRequestID = None
+         voidRequestToken = None
+         _run = ""
+      }
+   businessRules =
+      (BusinessRules){
+         ignoreAVSResult = None
+         ignoreCVResult = None
+         ignoreDAVResult = None
+         ignoreExportResult = None
+         ignoreValidateResult = None
+         declineAVSFlags = None
+         scoreThreshold = None
+      }
+   pinlessDebitService =
+      (PinlessDebitService){
+         reconciliationID = None
+         commerceIndicator = None
+         _run = ""
+      }
+   pinlessDebitValidateService =
+      (PinlessDebitValidateService){
+         _run = ""
+      }
+   pinlessDebitReversalService =
+      (PinlessDebitReversalService){
+         pinlessDebitRequestID = None
+         pinlessDebitRequestToken = None
+         reconciliationID = None
+         _run = ""
+      }
+   batch =
+      (Batch){
+         batchID = None
+         recordID = None
+      }
+   airlineData =
+      (AirlineData){
+         agentCode = None
+         agentName = None
+         ticketIssuerCity = None
+         ticketIssuerState = None
+         ticketIssuerPostalCode = None
+         ticketIssuerCountry = None
+         ticketIssuerAddress = None
+         ticketIssuerCode = None
+         ticketIssuerName = None
+         ticketNumber = None
+         checkDigit = None
+         restrictedTicketIndicator = None
+         transactionType = None
+         extendedPaymentCode = None
+         carrierName = None
+         passengerName = None
+         customerCode = None
+         documentType = None
+         documentNumber = None
+         documentNumberOfParts = None
+         invoiceNumber = None
+         invoiceDate = None
+         chargeDetails = None
+         bookingReference = None
+         totalFee = None
+         clearingSequence = None
+         clearingCount = None
+         totalClearingAmount = None
+         leg[] = <empty>
+         numberOfPassengers = None
+         reservationSystem = None
+         processIdentifier = None
+         iataNumericCode = None
+         ticketIssueDate = None
+         electronicTicket = None
+         originalTicketNumber = None
+         purchaseType = None
+      }
+   payPalButtonCreateService =
+      (PayPalButtonCreateService){
+         buttonType = None
+         reconciliationID = None
+         _run = ""
+      }
+   payPalPreapprovedPaymentService =
+      (PayPalPreapprovedPaymentService){
+         mpID = None
+         reconciliationID = None
+         _run = ""
+      }
+   payPalPreapprovedUpdateService =
+      (PayPalPreapprovedUpdateService){
+         mpID = None
+         reconciliationID = None
+         _run = ""
+      }
+   riskUpdateService =
+      (RiskUpdateService){
+         actionCode = None
+         recordID = None
+         recordName = None
+         negativeAddress =
+            (Address){
+               street1 = None
+               street2 = None
+               city = None
+               state = None
+               postalCode = None
+               country = None
+            }
+         markingReason = None
+         markingNotes = None
+         markingRequestID = None
+         _run = ""
+      }
+   fraudUpdateService =
+      (FraudUpdateService){
+         actionCode = None
+         markedData = None
+         markingReason = None
+         markingNotes = None
+         markingRequestID = None
+         _run = ""
+      }
+   caseManagementActionService =
+      (CaseManagementActionService){
+         actionCode = None
+         requestID = None
+         comments = None
+         _run = ""
+      }
+   reserved[] = <empty>
+   deviceFingerprintID = None
+   payPalRefundService =
+      (PayPalRefundService){
+         paypalDoCaptureRequestID = None
+         paypalDoCaptureRequestToken = None
+         paypalCaptureId = None
+         paypalNote = None
+         _run = ""
+      }
+   payPalAuthReversalService =
+      (PayPalAuthReversalService){
+         paypalAuthorizationId = None
+         paypalEcDoPaymentRequestID = None
+         paypalEcDoPaymentRequestToken = None
+         paypalAuthorizationRequestID = None
+         paypalAuthorizationRequestToken = None
+         paypalEcOrderSetupRequestID = None
+         paypalEcOrderSetupRequestToken = None
+         _run = ""
+      }
+   payPalDoCaptureService =
+      (PayPalDoCaptureService){
+         paypalAuthorizationId = None
+         completeType = None
+         paypalEcDoPaymentRequestID = None
+         paypalEcDoPaymentRequestToken = None
+         paypalAuthorizationRequestID = None
+         paypalAuthorizationRequestToken = None
+         invoiceNumber = None
+         _run = ""
+      }
+   payPalEcDoPaymentService =
+      (PayPalEcDoPaymentService){
+         paypalToken = None
+         paypalPayerId = None
+         paypalCustomerEmail = None
+         paypalDesc = None
+         paypalEcSetRequestID = None
+         paypalEcSetRequestToken = None
+         promoCode0 = None
+         invoiceNumber = None
+         _run = ""
+      }
+   payPalEcGetDetailsService =
+      (PayPalEcGetDetailsService){
+         paypalToken = None
+         paypalEcSetRequestID = None
+         paypalEcSetRequestToken = None
+         _run = ""
+      }
+   payPalEcSetService =
+      (PayPalEcSetService){
+         paypalReturn = None
+         paypalCancelReturn = None
+         paypalMaxamt = None
+         paypalCustomerEmail = None
+         paypalDesc = None
+         paypalReqconfirmshipping = None
+         paypalNoshipping = None
+         paypalAddressOverride = None
+         paypalToken = None
+         paypalLc = None
+         paypalPagestyle = None
+         paypalHdrimg = None
+         paypalHdrbordercolor = None
+         paypalHdrbackcolor = None
+         paypalPayflowcolor = None
+         paypalEcSetRequestID = None
+         paypalEcSetRequestToken = None
+         promoCode0 = None
+         requestBillingAddress = None
+         invoiceNumber = None
+         paypalBillingType = None
+         paypalBillingAgreementDesc = None
+         paypalPaymentType = None
+         paypalBillingAgreementCustom = None
+         paypalLogoimg = None
+         _run = ""
+      }
+   payPalEcOrderSetupService =
+      (PayPalEcOrderSetupService){
+         paypalToken = None
+         paypalPayerId = None
+         paypalCustomerEmail = None
+         paypalDesc = None
+         paypalEcSetRequestID = None
+         paypalEcSetRequestToken = None
+         promoCode0 = None
+         invoiceNumber = None
+         _run = ""
+      }
+   payPalAuthorizationService =
+      (PayPalAuthorizationService){
+         paypalOrderId = None
+         paypalEcOrderSetupRequestID = None
+         paypalEcOrderSetupRequestToken = None
+         paypalDoRefTransactionRequestID = None
+         paypalDoRefTransactionRequestToken = None
+         paypalCustomerEmail = None
+         _run = ""
+      }
+   payPalUpdateAgreementService =
+      (PayPalUpdateAgreementService){
+         paypalBillingAgreementId = None
+         paypalBillingAgreementStatus = None
+         paypalBillingAgreementDesc = None
+         paypalBillingAgreementCustom = None
+         _run = ""
+      }
+   payPalCreateAgreementService =
+      (PayPalCreateAgreementService){
+         paypalToken = None
+         paypalEcSetRequestID = None
+         paypalEcSetRequestToken = None
+         _run = ""
+      }
+   payPalDoRefTransactionService =
+      (PayPalDoRefTransactionService){
+         paypalBillingAgreementId = None
+         paypalPaymentType = None
+         paypalReqconfirmshipping = None
+         paypalReturnFmfDetails = None
+         paypalSoftDescriptor = None
+         paypalShippingdiscount = None
+         paypalDesc = None
+         invoiceNumber = None
+         paypalEcNotifyUrl = None
+         _run = ""
+      }
+   chinaPaymentService =
+      (ChinaPaymentService){
+         paymentMode = None
+         returnURL = None
+         pickUpAddress = None
+         pickUpPhoneNumber = None
+         pickUpPostalCode = None
+         pickUpName = None
+         _run = ""
+      }
+   chinaRefundService =
+      (ChinaRefundService){
+         chinaPaymentRequestID = None
+         chinaPaymentRequestToken = None
+         refundReason = None
+         _run = ""
+      }
+   boletoPaymentService =
+      (BoletoPaymentService){
+         instruction = None
+         expirationDate = None
+         reconciliationID = None
+         _run = ""
+      }
+   apPaymentType = None
+   apInitiateService =
+      (APInitiateService){
+         returnURL = None
+         productName = None
+         productDescription = None
+         reconciliationID = None
+         _run = ""
+      }
+   apCheckStatusService =
+      (APCheckStatusService){
+         apInitiateRequestID = None
+         _run = ""
+      }
+   ignoreCardExpiration = None
+   reportGroup = None
+   processorID = None
+   thirdPartyCertificationNumber = None
+   transactionLocalDateTime = None
+   solutionProviderTransactionID = None
+   surchargeAmount = None
+   surchargeSign = None
+   pinDataEncryptedPIN = None
+   pinDataKeySerialNumber = None
+   cashbackAmount = None
+   pinDebitPurchaseService =
+      (PinDebitPurchaseService){
+         networkOrder = None
+         commerceIndicator = None
+         reconciliationID = None
+         partialAuthIndicator = None
+         _run = ""
+      }
+   pinDebitCreditService =
+      (PinDebitCreditService){
+         networkOrder = None
+         commerceIndicator = None
+         reconciliationID = None
+         _run = ""
+      }
+   pinDebitReversalService =
+      (PinDebitReversalService){
+         pinDebitRequestID = None
+         _run = ""
+      }
+   ap =
+      (AP){
+         orderID = None
+         customerRepresentativeID = None
+         productDescription = None
+         settlementCurrency = None
+         subtotalAmount = None
+         shippingAmount = None
+         handlingAmount = None
+         shippingHandlingAmount = None
+         additionalAmount = None
+         taxAmount = None
+         giftWrapAmount = None
+         discountAmount = None
+         purchaseID = None
+         productID = None
+      }
+   apAuthService =
+      (APAuthService){
+         _run = ""
+      }
+   apAuthReversalService =
+      (APAuthReversalService){
+         authRequestID = None
+         _run = ""
+      }
+   apCaptureService =
+      (APCaptureService){
+         authRequestID = None
+         reconciliationID = None
+         _run = ""
+      }
+   apRefundService =
+      (APRefundService){
+         captureRequestID = None
+         reason = None
+         note = None
+         apInitiateRequestID = None
+         returnRef = None
+         reconciliationID = None
+         _run = ""
+      }
+   apCheckoutDetailsService =
+      (APCheckOutDetailsService){
+         _run = ""
+      }
+   apTransactionDetailsService =
+      (APTransactionDetailsService){
+         transactionDetailsRequestID = None
+         _run = ""
+      }
+   apConfirmPurchaseService =
+      (APConfirmPurchaseService){
+         _run = ""
+      }
+   payPalGetTxnDetailsService =
+      (PayPalGetTxnDetailsService){
+         transactionID = None
+         _run = ""
+      }
+   payPalTransactionSearchService =
+      (PayPalTransactionSearchService){
+         startDate = None
+         endDate = None
+         paypalCustomerEmail = None
+         paypalReceiptId = None
+         transactionID = None
+         invoiceNumber = None
+         grandTotalAmount = None
+         currency = None
+         paymentStatus = None
+         payerSalutation = None
+         payerFirstname = None
+         payerMiddlename = None
+         payerLastname = None
+         payerSuffix = None
+         _run = ""
+      }
+   ccDCCUpdateService =
+      (CCDCCUpdateService){
+         reason = None
+         action = None
+         dccRequestID = None
+         _run = ""
+      }
+ }
