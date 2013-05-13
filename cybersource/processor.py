@@ -29,6 +29,13 @@ class CyberScourceError(CyberSourceBaseException):
 class CyberScourceFailure(CyberSourceBaseException):
     pass
 
+
+class SchemaValidationError(CyberSourceBaseException):
+    def __init(self):
+        self.error_code = -1
+        self.value = "suds encountered an error validating your data against this service's WSDL schema. Please double-check for missing or invalid values, filling all required fields."
+
+
 CYBERSOURCE_RESPONSES = {
     '100': 'Successful transaction.',
     '101': 'The request is missing one or more required fields.',
@@ -70,14 +77,10 @@ class Processor(object):
 
     def __init__(self, *args, **kwargs):
         # Test server
-        self.client = Client('https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.26.wsdl')
+        self.client = Client('https://ics2wstest.ic3.com/commerce/1.x/transactionProcessor/CyberSourceTransaction_1.85.wsdl')
 
         self.password = '6CrXkQJxiZ0tKn2GCwpG4nSQ/fyQ9Z0tajLq01FsTGv4eV1cTivxsR1jdMD4ddOM/NBHdOKGQ7Y03LRMS3lwgavgAQBNCuLSOrQh0nc3bQ8YMgCs6W/SKw+r8MVC0Thbc4kVW6250Xl+mWoJcVNxkumxSJTkUoVUtRMdISwfcFynkPmUo8gJtcgmeYYLCkbidJD9/JD1nS1qMurTUWxMa/h5XVxOK/GxHWN0wPh104z80Ed04oZDtjTctExLeXCBq+ABAE0K4tI6tCHSdzdtDxgyAKzpb9IrD6vwxULROFtziRVbrbnReX6ZaglxU3GS6bFIlORShVS1Ex0hLB9wXA=='
         self.merchantid = 'cybersource_proame'
-
-        # Maybe Live Who knows
-        # self.password = '3c+R2H8XYm2y/Pkh3pcBHwpqwxYboIW51wSjQLoOQeRBmw8TFjwFAMGmWcS9s04fUsAW24g8LN9D/p+eok/AJ8n8WRbUsmRvqjKzzuo+33sn5QhdsfBmyilBN/40Navx2y0Bc36i2w3inElm5FJnfgYPeGwlrVPPjBGWl6ro0MqH9ThANN19U7joXB3elwEfCmrDFhughbnXBKNAug5B5EGbDxMWPAUAwaZZxL2zTh9SwBbbiDws30P+n56iT8AnyfxZFtSyZG+qMrPO6j7feyflCF2x8GbKKUE3/jQ1q/HbLQFzfqLbDeKcSWbkUmd+Bg94bCWtU8+MEZaXqujQyg=='
-        # self.merchantid = 'v2922736'
 
     def create_headers(self):
         wssens = ('wsse', 'http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd')
@@ -103,23 +106,32 @@ class Processor(object):
         self.client.set_options(soapheaders=security)
 
     def run_transaction(self):
-        ccAuthService = self.client.factory.create('ns0:ccAuthService')
-        ccAuthService._run = 'true'
+        try:
 
-        self.result = self.client.service.runTransaction(
-            merchantID=self.merchantid,
-            merchantReferenceCode=randrange(0, 100),
-            ics_applications='ics_auth',
-            card=self.card,
-            billTo=self.bill_to,
-            purchaseTotals=self.payment,
-            ccAuthService=ccAuthService
-        )
+            options = dict(
+                merchantID=self.merchantid,
+                merchantReferenceCode=randrange(0, 100),
+                billTo=self.bill_to,
+                purchaseTotals=self.payment,
+            )
 
-    def create_request(self):
-        self.request = self.client.factory.create('ns0:RequestMessage')
-        self.request.card = self.card
-        self.request.billTo = self.bill_to
+            if getattr(self, 'card', None):
+                ccAuthService = self.client.factory.create('ns0:ccAuthService')
+                ccAuthService._run = 'true'
+
+                options['card'] = self.card
+                options['ccAuthService'] = ccAuthService
+
+            if getattr(self, 'check', None):
+                ecDebitService = self.client.factory.create('ns0:ecDebitService')
+                ecDebitService._run = 'true'
+
+                options['check'] = self.check
+                options['ecDebitService'] = ecDebitService
+
+            self.response = self.client.service.runTransaction(**options)
+        except suds.WebFault:
+            raise SchemaValidationError()
 
     def payment_amount(self, **kwargs):
         '''
@@ -195,7 +207,46 @@ class Processor(object):
         self.card.cvIndicator = 1
         self.card.cvNumber = cvNumber
 
-    def bill_to(self, **kwargs):
+    def set_check_info(self, **kwargs):
+        '''
+            fullName = None
+            accountNumber = None
+            accountType = None
+            bankTransitNumber = None
+            checkNumber = None
+            secCode = None
+            accountEncoderID = None
+            authenticateID = None
+            paymentInfo = None
+        '''
+
+        # accountType
+        # C: Checking
+        # S: Savings (U.S. dollars only)
+        # X: Corporate checking (U.S. dollars only)
+
+        # Test stuff
+        kwargs['full_name'] = 'Colin Fletcher'
+        kwargs['account_number'] = '12345678'
+        kwargs['account_type'] = 'C'
+        kwargs['bank_transit_number'] = '112200439'
+        kwargs['check_numbner'] = '123'
+
+        fullName = kwargs.get('full_name')
+        accountNumber = kwargs.get('account_number')
+        accountType = kwargs.get('account_type')
+        bankTransitNumber = kwargs.get('bank_transit_number')
+        checkNumber = kwargs.get('check_numbner')
+
+        self.check = self.client.factory.create('ns0:Check')
+
+        self.check.fullName = fullName
+        self.check.accountNumber = accountNumber
+        self.check.accountType = accountType
+        self.check.bankTransitNumber = bankTransitNumber
+        self.check.checkNumber = checkNumber
+
+    def billing_info(self, **kwargs):
         '''
             title = None
             firstName = None
@@ -246,7 +297,8 @@ class Processor(object):
         kwargs['zipcode'] = '78728'
         kwargs['country'] = 'US'
         kwargs['cid'] = '0123456789'
-        kwargs['email'] = 'colin@protectamerica.com'
+        kwargs['email'] = 'random@example.com'
+        kwargs['phone_number'] = '5127050808'
 
         title = kwargs.get('title')
         firstName = kwargs.get('first_name')
@@ -259,6 +311,7 @@ class Processor(object):
         country = kwargs.get('country', 'US')
         customerID = kwargs.get('cid')
         email = kwargs.get('email')
+        phoneNumber = kwargs.get('phone_number')
 
         self.bill_to = self.client.factory.create('ns0:BillTo')
 
@@ -273,8 +326,36 @@ class Processor(object):
         self.bill_to.country = country
         self.bill_to.customerID = customerID
         self.bill_to.email = email
+        self.bill_to.phoneNumber = phoneNumber
 
     def check_response_for_cybersource_error(self):
-        if self.response.reasonCode == 100:
+        if self.response.reasonCode != 100:
+            print self.response
             raise CyberScourceError(self.response.reasonCode,
-                CYBERSOURCE_RESPONSES.get(self.response.reasonCode))
+                CYBERSOURCE_RESPONSES.get(str(self.response.reasonCode), 'Unknown Failure'))
+
+    def do_credit_card_test(self):
+        self.check = None
+        self.create_headers()
+        self.payment_amount()
+        self.set_card_info()
+        self.billing_info()
+
+        self.run_transaction()
+
+        self.check_response_for_cybersource_error()
+
+        print self.response
+
+    def do_ach_test(self):
+        self.card = None
+        self.create_headers()
+        self.payment_amount()
+        self.set_check_info()
+        self.billing_info()
+
+        self.run_transaction()
+
+        self.check_response_for_cybersource_error()
+
+        print self.response
